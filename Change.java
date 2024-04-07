@@ -1,4 +1,3 @@
-package fundmental_exercise;
 
 public class Change {
     public static void main(String[] args)

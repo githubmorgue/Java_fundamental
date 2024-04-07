@@ -1,5 +1,3 @@
-package fundmental_exercise;
-
 import java.util.Scanner;
 
 
