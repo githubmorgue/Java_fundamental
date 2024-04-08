@@ -33,17 +33,27 @@ public class CompoundInterest {
             }
         }
 
+        // print header with years
+        System.out.print("Year\t");
+
         // print one row of interest rates
-        for (int j = 0; j < interestRate.length; j++)
+        for (int j = 0; j < interestRate.length; j++) {
             System.out.printf("%9.0f%%", 100*interestRate[j]);
+            System.out.print("\t");
+        }
 
         System.out.println();
 
         // print balance table
-        for (double[] row : balances) {
+        for (int i = 0; i < balances.length; i++) {
+            // print year
+            System.out.printf((i + 1) + "\t");
+
             // print balance table
-            for (double b : row)
+            for (double b : balances[i]) {
                 System.out.printf("%10.2f", b);
+                System.out.print("\t");
+            }
 
             System.out.println();
         }
