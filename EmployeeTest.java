@@ -35,7 +35,7 @@ class Employee {
     {
         name = n;
         salary = s;
-        hireDay = LocalDate.of(year, month, month);
+        hireDay = LocalDate.of(year, month, day);
     }
 
     public String getName()
