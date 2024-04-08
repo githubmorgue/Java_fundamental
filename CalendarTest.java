@@ -15,8 +15,11 @@ public class CalendarTest {
         int value = weekday.getValue(); // 1=Monday, ... , 7=Sunday
 
         System.out.println("Mon Tue Wed Thu Fri Sat Sun");
+
+        // Indentation at beginning of calendar
         for (int i = 1; i < value; i++)
             System.out.print(" ");
+
         while (date.getMonthValue() == month)
         {
             System.out.printf("%3d", date.getDayOfMonth());
@@ -27,6 +30,7 @@ public class CalendarTest {
             date = date.plusDays(1);
             if (date.getDayOfWeek().getValue() == 1) System.out.println();
         }
+        // Wrap the line when the end of the month is not a Sunday
         if (date.getDayOfWeek().getValue() != 1) System.out.println();
     }
 }
