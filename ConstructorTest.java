@@ -35,7 +35,7 @@ class Employee4 {
     // static initialization block
     static {
         // set nextId to a random number between 0 and 9999
-        nextId = generator.nextInt(1000);
+        nextId = generator.nextInt(10000);
     }
 
     // object initialization block
