@@ -12,6 +12,7 @@ class TreeNode {
 
 class Tree {
     TreeNode root;
+    int ans;
 
     // Count the number of subtrees in the tree
     public int countSubtrees(TreeNode root) {
@@ -19,12 +20,29 @@ class Tree {
             return 0;
         }
 
-        // Recursively count the number of subtrees in the left and right subtrees
-        int leftCount = countSubtrees(root.left);
-        int rightCount = countSubtrees(root.right);
+        ans = 0; // Initialize ans to 0
 
-        // Return the number of subtrees including the current node itself
-        return leftCount + rightCount + 1;
+        // Call the helper function dfs
+        dfs(root);
+
+        // Return the total number of subtrees
+        return ans + 1;
+    }
+
+    // Helper function to perform depth-first search
+    private int dfs(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+
+        int res = 1; // Initialize result as 1
+        int leftCount = dfs(node.left); // Recursively count subtrees in the left subtree
+        int rightCount = dfs(node.right); // Recursively count subtrees in the right subtree
+
+        res += leftCount + rightCount + (leftCount * rightCount);
+        ans += res;
+
+        return res;
     }
 }
 
